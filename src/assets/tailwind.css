@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: gedonia_font;
+    src: url(font.ttf);
+  }
+
+  html,
+  body,
+  #root {
+    @apply w-full h-full;
+  }
+
+  body {
+    @apply scrollbar bg-defaultBackground;
+    display: flex;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    @apply w-2.5;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded border-2 border-solid border-defaultBackground bg-defaultYellow;
+  }
+
+  .scrollbar::-webkit-scrollbar-corner {
+    @apply opacity-0;
+  }
+
+  .bg__empty {
+    @apply min-w-full min-h-full;
+  }
+
+  .section__cnt {
+    @apply relative bg__empty h-[108%] w-full flex justify-center items-center flex-col gap-14 overflow-hidden;
+  }
+
+  .section__cnt > .title {
+    @apply text-defaultYellow text-5xl font-[gedonia\_font] uppercase;
+  }
+  .section__cnt > .main {
+    @apply h-1/2 rounded outline outline-2 outline-offset-8 outline-defaultYellow w-[250px] sm:w-1/2;
+  }
+
+  .hr {
+    @apply clear-both border-defaultYellow bg-defaultYellow text-defaultYellow;
+  }
+
+  .link-shadow {
+    box-shadow: 0 0 1px 2px black, inset 0 0 1px 2px black,
+      inset 0 0 10px 50px rgba(0, 0, 0, 0.493);
+  }
+}
